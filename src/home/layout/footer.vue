@@ -1,5 +1,5 @@
 <template>
-  <div class="layout-container-header">
+  <div class="layout-container-footer">
     <slot></slot>
   </div>
 </template>
@@ -7,7 +7,7 @@
 <script>
 /**
  * @author coma
- * @description 布局顶栏组件
+ * @description 布局底部组件
  */
 
 import mixin from './mix-layout'
@@ -15,7 +15,7 @@ export default {
   mixins: [mixin],
   data () {
     return {
-      name: 'layout-header',
+      name: 'layout-footer',
       isHeaderOrFooter: true
     }
   }
@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style>
-.layout-container-header {
+.layout-container-footer {
   display: flex;
   width: 100%;
 }
