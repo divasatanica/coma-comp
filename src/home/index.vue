@@ -4,9 +4,23 @@
       <layout-header>
         <h1> FUCK you </h1>
       </layout-header>
-      <div class="test" id="a"></div>
-      <div class="test" id="b"></div>
-      <div class="test" id="c"></div>
+      <layout-container>
+        <layout-aside>
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </layout-aside>
+        <layout-main>
+          <div class="test" id="a"></div>
+          <div class="test" id="b"></div>
+          <div class="test" id="c"></div>
+        </layout-main>
+      </layout-container>
+      <layout-footer>
+        <h1>Man</h1>
+      </layout-footer>
     </layout-container>
   </div>
 </template>
@@ -17,18 +31,22 @@
  * @description 组件库根容器
  */
 
-import {layoutContainer, layoutHeader} from './layout/index.js'
+import {layoutContainer, layoutHeader, layoutMain, layoutFooter, layoutAside} from './layout/index.js'
 
 export default {
   components: {
     layoutContainer,
-    layoutHeader
+    layoutHeader,
+    layoutMain,
+    layoutFooter,
+    layoutAside
   }
 }
 </script>
 
 <style>
 .test {
+  width: 33%;
   height: 500px;
 }
 #a {
