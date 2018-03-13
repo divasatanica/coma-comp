@@ -10,30 +10,33 @@
  * @description 布局容器
  */
 export default {
+  props: {
+    direction: {
+      type: String,
+      default: 'horizontal'
+    }
+  },
   mounted () {
-    console.log(this._checkFooter(), this._checkHeader())
-    if (this._checkFooter() || this._checkHeader()) {
+    if (this._checkHeaderOrFooter() || this.direction === 'vertical') {
       this.hasHeaderOrFooter = true
     }
   },
   data () {
     return {
+      name: 'layout-container',
       hasHeaderOrFooter: false
     }
   },
   methods: {
-    _checkFooter () {
+    _checkHeaderOrFooter () {
       let slots = Array.from(this.$slots.default)
       let result = false
-      for (let i = 1, len = slots.length; i < len; i ++) {
-        if (slots[i].tag && slots[i].tag.indexOf('vue-component') > -1) {
+      for (let i = 0, len = slots.length; i < len; i ++) {
+        if (slots[i].componentInstance && slots[i].componentInstance.isHeaderOrFooter) {
           result = true
         }
       }
       return result
-    },
-    _checkHeader () {
-      return this.$slots.default[0].componentInstance.isHeaderOrFooter
     }
   }
 }
