@@ -3,6 +3,7 @@
     <layout-container>
       <layout-header>
         <h1> FUCK you </h1>
+        
       </layout-header>
       <layout-container>
         <layout-aside>
@@ -19,7 +20,15 @@
         </layout-main>
       </layout-container>
       <layout-footer>
-        <h1>Man</h1>
+        <button-group>
+          <basic-button  
+          :action="test"
+          :loading="loading"
+          iconClass="fa-upload"
+          type="primary">Upload</basic-button>
+          <basic-button iconClass="fa-plus">Add</basic-button>
+          <basic-button iconClass="fa-thumbs-up">Upvote</basic-button>
+        </button-group>
       </layout-footer>
     </layout-container>
   </div>
@@ -32,6 +41,7 @@
  */
 
 import {layoutContainer, layoutHeader, layoutMain, layoutFooter, layoutAside} from './layout/index.js'
+import {basicButton, buttonGroup} from './button/index.js'
 
 export default {
   components: {
@@ -39,14 +49,26 @@ export default {
     layoutHeader,
     layoutMain,
     layoutFooter,
-    layoutAside
+    layoutAside,
+    basicButton,
+    buttonGroup
+  },
+  data () {
+    return {
+      loading: false
+    }
+  },
+  methods: {
+    test () {
+      console.log(1)
+    }
   }
 }
 </script>
 
 <style>
 .test {
-  width: 33%;
+  flex: 1;
   height: 500px;
 }
 #a {
