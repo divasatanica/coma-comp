@@ -1,9 +1,10 @@
 <template>
-  <button class="basic-btn fa transition-03" 
-  :class="{[`cm-button-${type}`]: true, 'is-disabled': disabled}"
-  :disabled="disabled"
+  <button class="basic-btn transition-03" 
+  :class="{[`cm-button-${type}`]: true, 'is-disabled': realDisabled}"
+  :disabled="realDisabled"
+  @click="action"
   >
-    <i class="fa" :class="{[iconClass]: true}"></i>
+    <i class="fa" :class="{[realIconClass]: true}"></i>
     <slot></slot>
   </button>
 </template>
@@ -28,13 +29,37 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    loading: {
+      type: Boolean,
+      default: false
+    },
+    action: {
+      type: Function
     }
   },
   data () {
     return {
       name: 'cm-button',
-      colorMap: {
-
+      realIconClass: this.iconClass,
+      realDisabled: this.disabled,
+      bufferClass: ''
+    }
+  },
+  methods: {
+    test () {
+      this.action();
+    }
+  },
+  watch: {
+    loading () {
+      if (this.realIconClass.indexOf('fa-spin') < 0) {
+        this.bufferClass = this.realIconClass
+        this.realIconClass = 'fa-spin fa-spinner'
+        this.realDisabled = true
+      } else {
+        this.realIconClass = this.bufferClass
+        this.realDisabled = false
       }
     }
   }
