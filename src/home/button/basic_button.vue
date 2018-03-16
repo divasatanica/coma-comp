@@ -35,7 +35,8 @@ export default {
       default: false
     },
     action: {
-      type: Function
+      type: Function,
+      default: function () {}
     }
   },
   data () {
@@ -70,6 +71,7 @@ export default {
 
 .basic-btn {
   padding: 0.4rem 0.5rem;
+  margin: 0;
   border-radius: 3px;
   cursor: pointer;
   color: #fff;
