@@ -1,4 +1,8 @@
-html,body,div,ul,li {
+html,body,div,ul,li,button {
   padding: 0;
   margin: 0;
+}
+
+.transition-03 {
+  transition: 0.3s all ease;
 }
