@@ -1,6 +1,8 @@
 <template>
   <button class="basic-btn transition-01" 
-  :class="{[`cm-button-${type}`]: true, 'is-disabled': realDisabled}"
+  :class="{[`cm-button-${type}`]: true, 
+            'is-disabled': realDisabled,
+            [`cm-button--${size}`]: true}"
   :disabled="realDisabled"
   @click="action"
   >
@@ -37,6 +39,10 @@ export default {
     action: {
       type: Function,
       default: function () {}
+    },
+    size: {
+      type: String,
+      default: 'default'
     }
   },
   data () {
@@ -70,7 +76,6 @@ export default {
 <style lang="scss">
 
 .basic-btn {
-  padding: 0.4rem 0.5rem;
   margin: 0;
   border-radius: 3px;
   cursor: pointer;
@@ -84,6 +89,21 @@ export default {
 
 @import './color_sets.scss';
 
-
+.cm-button--mini {
+  padding: 7px 15px;
+  font-size: 12px;
+}
+.cm-button--small {
+  padding: 9px 15px;
+  font-size: 12px;
+}
+.cm-button--medium {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+.cm-button--default {
+  padding: 12px 20px;
+  font-size: 14px;
+}
 
 </style>
