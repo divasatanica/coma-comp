@@ -6,26 +6,32 @@ $defaultFontColor_hover: #409eff;
 $defaultBorderColor: 1px solid #dcdfe6;
 $defaultFontColor_disabled: #c0c4cc;
 $defaultBorderColor_disabled: 1px solid #ebeef5;
+$defaultColor_active: #3a8ee6;
 
 $primaryBGC: #409eff;
 $primaryBGC_hover: #66b1ff;
 $primaryBGC_disabled: #a0cfff;
+$primaryBGC_active: #3a8ee6;
 
 $successBGC: #67c23a;
 $successBGC_hover: #85ce61;
 $successBGC_disabled: #b3e19d;
+$successBGC_active: #5daf34;
 
 $infoBGC: #909399;
 $infoBGC_hover: #a6a9ad;
 $infoBGC_disabled: #c8c9cc;
+$infoBGC_active: #82848a;
 
 $warnBGC: #e6a23c;
 $warnBGC_hover: #ebb563;
 $warnBGC_disabled: #f3d19e;
+$warnBGC_active: #cf9236;
 
 $dangerBGC: #f56c6c;
 $dangerBGC_hover: #f78989;
 $dangerBGC_disabled: #fab6b6;
+$dangerBGC_active: #dd6161;
 
 /* 默认按钮颜色 */
 .cm-button-default {
@@ -40,6 +46,10 @@ $dangerBGC_disabled: #fab6b6;
       color: $defaultBGC_hover;
     }
     color: $defaultFontColor_hover;
+  }
+  &:active {
+    border: 1px solid $defaultColor_active;
+    color: $defaultColor_active;
   }
 
   &.is-disabled {
@@ -66,6 +76,12 @@ $dangerBGC_disabled: #fab6b6;
     background: {
       color: $primaryBGC_hover;
     }
+  }
+  &:active {
+    background: {
+      color: $primaryBGC_active
+    }
+    border: 1px solid $primaryBGC_active;
   }
 
   &.is-disabled {
@@ -94,6 +110,12 @@ $dangerBGC_disabled: #fab6b6;
       color: $successBGC_hover;
     }
   }
+  &:active {
+    background: {
+      color: $successBGC_active;
+    }
+    border: 1px solid $successBGC_active
+  }
 
   &.is-disabled {
     background: {
@@ -120,6 +142,12 @@ $dangerBGC_disabled: #fab6b6;
     background: {
       color: $infoBGC_hover;
     }
+  }
+  &:active {
+    background: {
+      color: $infoBGC_active;
+    }
+    border: $infoBGC_active;
   }
 
   &.is-disabled {
@@ -149,6 +177,12 @@ $dangerBGC_disabled: #fab6b6;
       color: $warnBGC_hover;
     }
   }
+  &:active {
+    background: {
+      color: $dangerBGC_active;
+    }
+    border: 1px solid $dangerBGC_active;
+  }
 
   &.is-disabled {
     background: {
@@ -175,6 +209,12 @@ $dangerBGC_disabled: #fab6b6;
     background: {
       color: $dangerBGC_hover;
     }
+  }
+  &:active {
+    background: {
+      color: $dangerBGC_active;
+    }
+    border: 1px solid $dangerBGC_active;
   }
 
   &.is-disabled {

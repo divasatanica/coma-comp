@@ -6,3 +6,7 @@ html,body,div,ul,li,button {
 .transition-03 {
   transition: 0.3s all ease;
 }
+
+.transition-01 {
+  transition: 0.1s all ease;
+}

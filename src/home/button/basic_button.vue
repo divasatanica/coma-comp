@@ -1,5 +1,5 @@
 <template>
-  <button class="basic-btn transition-03" 
+  <button class="basic-btn transition-01" 
   :class="{[`cm-button-${type}`]: true, 'is-disabled': realDisabled}"
   :disabled="realDisabled"
   @click="action"
@@ -75,6 +75,7 @@ export default {
   border-radius: 3px;
   cursor: pointer;
   color: #fff;
+  outline: none;
 }
 
 .is-disabled {
