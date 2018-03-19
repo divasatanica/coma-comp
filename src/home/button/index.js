@@ -1,7 +1,7 @@
-import basicButton from './basic_button'
-import buttonGroup from './button_group'
+import cmButton from './basic_button'
+import cmButtonGroup from './button_group'
 
 export {
-  basicButton,
-  buttonGroup
+  cmButton,
+  cmButtonGroup
 }

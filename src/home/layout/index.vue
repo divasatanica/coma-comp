@@ -2,8 +2,7 @@
   <div id="component-root">
     <layout-container>
       <layout-header>
-        <h1> FUCK you </h1>
-        
+        <h1> FUCK you </h1>  
       </layout-header>
       <layout-container>
         <layout-aside>
@@ -20,15 +19,7 @@
         </layout-main>
       </layout-container>
       <layout-footer>
-        <button-group>
-          <basic-button  
-          :action="test"
-          :loading="loading"
-          iconClass="fa-upload"
-          type="primary">Upload</basic-button>
-          <basic-button iconClass="fa-plus">Add</basic-button>
-          <basic-button iconClass="fa-thumbs-up">Upvote</basic-button>
-        </button-group>
+        <h2> CopyRight @ coma</h2>
       </layout-footer>
     </layout-container>
   </div>
@@ -37,11 +28,9 @@
 <script>
 /**
  * @author coma
- * @description 组件库根容器
  */
 
-import {layoutContainer, layoutHeader, layoutMain, layoutFooter, layoutAside} from './layout/index.js'
-import {basicButton, buttonGroup} from './button/index.js'
+import {layoutContainer, layoutHeader, layoutMain, layoutFooter, layoutAside} from './index.js'
 
 export default {
   components: {
@@ -49,20 +38,9 @@ export default {
     layoutHeader,
     layoutMain,
     layoutFooter,
-    layoutAside,
-    basicButton,
-    buttonGroup
-  },
-  data () {
-    return {
-      loading: false
-    }
-  },
-  methods: {
-    test () {
-      console.log(1)
-    }
+    layoutAside
   }
+  
 }
 </script>
 
@@ -84,3 +62,4 @@ export default {
   background-color: #0ff;
 }
 </style>
+
