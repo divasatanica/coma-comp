@@ -2,7 +2,7 @@
   <div id="component-root">
     <layout-container>
       <layout-header>
-        <h1> FUCK you </h1>
+        <h1> FUCK you </h1>  
       </layout-header>
       <layout-container>
         <layout-aside>
@@ -19,7 +19,7 @@
         </layout-main>
       </layout-container>
       <layout-footer>
-        <h1>Man</h1>
+        <h2> CopyRight @ coma</h2>
       </layout-footer>
     </layout-container>
   </div>
@@ -28,10 +28,9 @@
 <script>
 /**
  * @author coma
- * @description 组件库根容器
  */
 
-import {layoutContainer, layoutHeader, layoutMain, layoutFooter, layoutAside} from './layout/index.js'
+import {layoutContainer, layoutHeader, layoutMain, layoutFooter, layoutAside} from './index.js'
 
 export default {
   components: {
@@ -41,12 +40,13 @@ export default {
     layoutFooter,
     layoutAside
   }
+  
 }
 </script>
 
 <style>
 .test {
-  width: 33%;
+  flex: 1;
   height: 500px;
 }
 #a {
@@ -62,3 +62,4 @@ export default {
   background-color: #0ff;
 }
 </style>
+

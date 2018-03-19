@@ -1,0 +1,232 @@
+/* Color Variables*/
+$defaultBGC: #fff;
+$defaultFontColor: #606266;
+$defaultBGC_hover: #ecf5ff;
+$defaultFontColor_hover: #409eff; 
+$defaultBorderColor: 1px solid #dcdfe6;
+$defaultFontColor_disabled: #c0c4cc;
+$defaultBorderColor_disabled: 1px solid #ebeef5;
+$defaultColor_active: #3a8ee6;
+
+$primaryBGC: #409eff;
+$primaryBGC_hover: #66b1ff;
+$primaryBGC_disabled: #a0cfff;
+$primaryBGC_active: #3a8ee6;
+
+$successBGC: #67c23a;
+$successBGC_hover: #85ce61;
+$successBGC_disabled: #b3e19d;
+$successBGC_active: #5daf34;
+
+$infoBGC: #909399;
+$infoBGC_hover: #a6a9ad;
+$infoBGC_disabled: #c8c9cc;
+$infoBGC_active: #82848a;
+
+$warnBGC: #e6a23c;
+$warnBGC_hover: #ebb563;
+$warnBGC_disabled: #f3d19e;
+$warnBGC_active: #cf9236;
+
+$dangerBGC: #f56c6c;
+$dangerBGC_hover: #f78989;
+$dangerBGC_disabled: #fab6b6;
+$dangerBGC_active: #dd6161;
+
+/* 默认按钮颜色 */
+.cm-button-default {
+  background: {
+    color: $defaultBGC;
+  }
+  color: $defaultFontColor;
+  border: $defaultBorderColor;
+
+  &:hover {
+    background: {
+      color: $defaultBGC_hover;
+    }
+    color: $defaultFontColor_hover;
+  }
+  &:active {
+    border: 1px solid $defaultColor_active;
+    color: $defaultColor_active;
+  }
+
+  &.is-disabled {
+    color: $defaultFontColor_disabled;
+    border: $defaultBorderColor_disabled;
+  }
+  &.is-disabled:hover {
+    color: $defaultFontColor_disabled;
+    background: {
+      color: $defaultBGC;
+    }
+    border: $defaultBorderColor_disabled;
+  }
+}
+
+/* 主要按钮颜色 */
+.cm-button-primary {
+  background: {
+    color: $primaryBGC;
+  }
+  border: 1px solid $primaryBGC;
+
+  &:hover {
+    background: {
+      color: $primaryBGC_hover;
+    }
+  }
+  &:active {
+    background: {
+      color: $primaryBGC_active
+    }
+    border: 1px solid $primaryBGC_active;
+  }
+
+  &.is-disabled {
+    background: {
+      color: $primaryBGC_disabled;
+    }
+    border: 1px solid $primaryBGC_disabled;
+  }
+  &.is-disabled:hover {
+    background: {
+      color: $primaryBGC_disabled;
+    }
+    border: 1px solid $primaryBGC_disabled;
+  }
+}
+
+/* 成功按钮颜色 */
+.cm-button-success {
+  background: {
+    color: $successBGC;
+  }
+  border: 1px solid $successBGC;
+
+  &:hover {
+    background: {
+      color: $successBGC_hover;
+    }
+  }
+  &:active {
+    background: {
+      color: $successBGC_active;
+    }
+    border: 1px solid $successBGC_active
+  }
+
+  &.is-disabled {
+    background: {
+      color: $successBGC_disabled;
+    }
+    border: 1px solid $successBGC_disabled;
+  }
+  &.is-disabled:hover {
+    background: {
+      color: $successBGC_disabled;
+    }
+    border: 1px solid $successBGC_disabled;
+  }
+}
+
+/* 信息按钮颜色 */
+.cm-button-info {
+  background: {
+    color: $infoBGC;
+  }
+  border: 1px solid $infoBGC;
+
+  &:hover {
+    background: {
+      color: $infoBGC_hover;
+    }
+  }
+  &:active {
+    background: {
+      color: $infoBGC_active;
+    }
+    border: $infoBGC_active;
+  }
+
+  &.is-disabled {
+    background: {
+      color: $infoBGC_disabled;
+    }
+    border: 1px solid $infoBGC_disabled;
+  }
+  &.is-disabled:hover {
+    background: {
+      color: $infoBGC_disabled;
+    }
+    border: 1px solid $infoBGC_disabled;
+  }
+}
+
+
+/* 警告按钮颜色 */
+.cm-button-warn {
+  background: {
+    color: $warnBGC;
+  }
+  border: 1px solid $warnBGC;
+
+  &:hover {
+    background: {
+      color: $warnBGC_hover;
+    }
+  }
+  &:active {
+    background: {
+      color: $dangerBGC_active;
+    }
+    border: 1px solid $dangerBGC_active;
+  }
+
+  &.is-disabled {
+    background: {
+      color: $warnBGC_disabled;
+    }
+    border: 1px solid $warnBGC_disabled;
+  }
+  &.is-disabled:hover {
+    background: {
+      color: $warnBGC_disabled;
+    }
+    border: 1px solid $warnBGC_disabled;
+  }
+}
+
+/* 危险按钮颜色 */
+.cm-button-danger {
+  background: {
+    color: $dangerBGC;
+  }
+  border: 1px solid $dangerBGC;
+
+  &:hover {
+    background: {
+      color: $dangerBGC_hover;
+    }
+  }
+  &:active {
+    background: {
+      color: $dangerBGC_active;
+    }
+    border: 1px solid $dangerBGC_active;
+  }
+
+  &.is-disabled {
+    background: {
+      color: $dangerBGC_disabled;
+    }
+    border: 1px solid $dangerBGC_disabled;
+  }
+  &.is-disabled:hover {
+    background: {
+      color: $dangerBGC_disabled;
+    }
+    border: 1px solid $dangerBGC_disabled;
+  }
+}
