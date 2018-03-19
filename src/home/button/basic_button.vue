@@ -36,10 +36,6 @@ export default {
       type: Boolean,
       default: false
     },
-    action: {
-      type: Function,
-      default: function () {}
-    },
     size: {
       type: String,
       default: 'default'
@@ -54,8 +50,8 @@ export default {
     }
   },
   methods: {
-    test () {
-      this.action();
+    action (e) {
+      this.$emit('click', e)
     }
   },
   watch: {
