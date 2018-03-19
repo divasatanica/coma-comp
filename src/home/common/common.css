@@ -3,6 +3,10 @@ html,body,div,ul,li,button {
   margin: 0;
 }
 
+ul,ol,li {
+  list-style: none;
+}
+
 .transition-03 {
   transition: 0.3s all ease;
 }
