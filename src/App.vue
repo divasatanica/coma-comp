@@ -4,6 +4,7 @@
       <ul>
         <li class="nav-item"><a href="./layout">Layout 布局</a></li>
         <li class="nav-item"><a href="./button">Button 按钮</a></li>
+        <li class="nav-item"><a href="./form">Form 表单</a></li>
       </ul>
     </div>
     <div class="right-block">
