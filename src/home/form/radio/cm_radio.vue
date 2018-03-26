@@ -1,16 +1,16 @@
 <template>
-  <label class="cm-radio-container" :class="{'is-bordered': bordered, 'is-checked': isChecked, 'is-disabled': disabled}">
-    <span class="cm-radio-input" :class="{'is-checked': isChecked, 'is-disabled': disabled}">
-      <span class="cm-radio-input--inner" @click="changeInput"></span>
+  <label class="cm-radio-container" :class="{'is-bordered': bordered, 'is-checked': isChecked, 'is-disabled': isDisabled, [`cm-radio--${size}`]: true}">
+    <span class="cm-radio-input" :class="{'is-checked': isChecked, 'is-disabled': isDisabled}">
+      <span class="cm-radio-input--inner" :class="{'is-disabled': isDisabled}" @click="changeInput"></span>
       <input class="cm-radio-input--original" 
        type="radio" 
        @change="emitInput" 
        ref="main" 
        :value="realValue" 
-       :disabled="disabled"
+       :disabled="isDisabled"
       >
     </span>
-    <span class="cm-radio-input--label" :class="{'is-checked': isChecked}">{{displayText}}</span>
+    <span class="cm-radio-input--label" :class="{'is-checked': isChecked, 'is-disabled': isDisabled}">{{displayText}}</span>
   </label>
 </template>
 
@@ -20,53 +20,13 @@
  * @description 单选框组件
  */
 
-import {uuid} from '@/util/uuid'
+import radioMix from './mixins'
 
 export default {
-  mounted () {
-
-  },
+  mixins: [radioMix],
   props: {
-    value: {
-
-    },
     bordered: {
       type: Boolean
-    },
-    displayText: {
-      type: String
-    },
-    realValue: {
-      
-    },
-    univerName: {
-      type: String,
-      default: uuid(this.value)
-    },
-    disabled: {
-      type: Boolean
-    }
-  },
-  data () {
-    return {
-      isChecked: false,
-      el: {}
-    }
-  },
-  methods: {
-    emitInput (e) {
-      this.isChecked = true
-      /*
-      input: 实现v-model需要触发
-      change: 留出一个异步事件的接口
-      univer: 给radio-group组件使用为了处理选中状态
-      */
-      this.$emit('input', this.$refs.main.value)
-      this.$emit('change', this.$refs.main.value)
-      this.$emit('univer', this)
-    },
-    changeInput () {
-      this.$refs.main.click()
     }
   },
   watch: {
@@ -84,10 +44,15 @@ export default {
 @import '../../common/color_set.scss';
 
 $void: 4px;
+$disabled_checked_bgc: #c0c4cc;
+$disabled_bgc: #f5f7fa;
+$disabled_border: #ebeef5;
+
 .cm-radio-container {
   position: relative;
-  display: inline-block;
-  height: 20px;
+  display: inline-flex;
+
+  cursor: pointer;
   &.is-bordered {
     padding: 12px 20px;
     border: 1px solid $border_color;
@@ -95,6 +60,12 @@ $void: 4px;
     &.is-checked {
       border-color: $high_light;
     }
+    &.is-disabled {
+      border-color: $disabled_border;
+    }
+  }
+  &.is-disabled {
+    cursor: not-allowed;
   }
   &+.cm-radio-container {
     margin-left: 30px;
@@ -111,9 +82,12 @@ $void: 4px;
     .cm-radio-input--inner {
       border-color: $high_light;
       background: $high_light;
-
       &:after {
         transform: translate(-50%, -50%) scale(1);
+      }
+      &.is-disabled {
+        background: $disabled_bgc;
+        border-color: $disabled_bgc;
       }
     }
   }
@@ -127,7 +101,18 @@ $void: 4px;
   cursor: pointer;
   border: 1px solid $font_color;
   box-sizing: border-box;
-
+  &.is-disabled {
+    cursor: not-allowed;
+    border: 1px solid $disabled_bgc;
+    &:hover {
+      border: 1px solid $disabled_bgc;
+    }
+    &:after {
+      background: {
+        color: $disabled_checked_bgc;
+      }
+    }
+  }
   &:hover {
     border: 1px solid $high_light;
   }
@@ -161,8 +146,32 @@ $void: 4px;
 .cm-radio-input--label {
   color: $font_color;
   margin-left: 8px;
+  line-height: 1;
   &.is-checked {
     color: $high_light;
   }
+  &.is-disabled {
+    color: $disabled_bgc;
+    cursor: not-allowed;
+  }
 }
+.is-bordered {
+  &.cm-radio--mini {
+    padding: 7px 15px;
+    font-size: 12px;
+  }
+  &.cm-radio--small {
+    padding: 9px 15px;
+    font-size: 12px;
+  }
+  &.cm-radio--medium {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  &.cm-radio--default {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
+
 </style>
