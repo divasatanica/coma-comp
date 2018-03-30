@@ -18,10 +18,10 @@
  * @description 单选按钮
  */
 
-import radioMixin from './mixins'
+import formMixin from '../v_model'
 
 export default {
-  mixins: [radioMixin]
+  mixins: [formMixin]
 }
 </script>
 

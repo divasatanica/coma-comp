@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-export default Vue.component('radio-mixin', {
+export default Vue.component('cm-vmodel', {
   props: {
     value: {
 
@@ -19,7 +19,7 @@ export default Vue.component('radio-mixin', {
       default: 'default'
     }
   },
-  data () {
+  data() {
     return {
       isChecked: false,
       isDisabled: this.disabled

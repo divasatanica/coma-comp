@@ -20,10 +20,10 @@
  * @description 单选框组件
  */
 
-import radioMix from './mixins'
+import formMix from '../v_model'
 
 export default {
-  mixins: [radioMix],
+  mixins: [formMix],
   props: {
     bordered: {
       type: Boolean
