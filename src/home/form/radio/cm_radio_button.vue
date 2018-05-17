@@ -8,7 +8,9 @@
     :value="realValue"
     :disabled="isDisabled"
     >
-    <span class="cm-radio-button--inner transition-03" :class="{'is-checked': isChecked, 'is-disabled': isDisabled, [`cm-radio-button--${size}`]: true}">{{displayText}}</span>
+    <span class="cm-radio-button--inner transition-03" :class="{'is-checked': isChecked, 'is-disabled': isDisabled, [`cm-radio-button--${size}`]: true}">
+      <slot></slot>
+    </span>
   </label>
 </template>
 

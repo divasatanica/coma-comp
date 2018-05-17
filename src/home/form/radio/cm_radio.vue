@@ -10,7 +10,9 @@
        :disabled="isDisabled"
       >
     </span>
-    <span class="cm-radio-input--label" :class="{'is-checked': isChecked, 'is-disabled': isDisabled}">{{displayText}}</span>
+    <span class="cm-radio-input--label" :class="{'is-checked': isChecked, 'is-disabled': isDisabled}">
+      <slot></slot>
+    </span>
   </label>
 </template>
 
