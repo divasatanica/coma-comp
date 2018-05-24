@@ -5,7 +5,10 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 
+import {forEachSlotChild} from '@/util/walk'
+
 Vue.prototype.$http = axios
+Vue.prototype.$forEachSlotChild = forEachSlotChild
 
 Vue.config.productionTip = false
 

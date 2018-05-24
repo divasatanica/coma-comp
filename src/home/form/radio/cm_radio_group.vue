@@ -10,21 +10,15 @@
  * @description 单选框组合
  */
 
+
 export default {
   mounted () {
-    this.$nextTick(() => {
-      let arr = Array.from(this.$slots.default)
-      let ele
-      for (let i = 0, len = arr.length; i < len; i ++) {
-        ele = arr[i].componentInstance
-        if (ele) {
-          if (this.disabled) {
-            ele.isDisabled = true
-          }
-          ele.$on('change', this.listenChange)
-          ele.$on('univer', this._handleChecked)
-        }
+    this.$forEachSlotChild((ele, root) => {
+      if (root.disabled) {
+        ele.isDisabled = true
       }
+      ele.$on('change', root.listenChange)
+      ele.$on('univer', root._handleChecked)
     })
   },
   props: {
@@ -37,17 +31,12 @@ export default {
   },
   methods: {
     _handleChecked (instance) {
-      let arr = Array.from(this.$slots.default)
-      let ele
-      for (let i = 0, len = arr.length; i < len; i ++) {
-        ele = arr[i].componentInstance
-        if (ele) {
-          ele.isChecked = false
-          ele.$refs.main.checked = false
-        }
-      }
-      instance.isChecked = true
-      instance.$refs.main.checked = true
+      this.$forEachSlotChild((ele, root) => {
+        ele.isChecked = false
+        ele.$refs.main.checked = false
+        instance.isChecked = true
+        instance.$refs.main.checked = true
+      })  
     },
     listenChange (v) {
       this.$emit('change', v)
@@ -56,15 +45,8 @@ export default {
   },
   watch: {
     disabled () {
-      this.$nextTick(() => {
-        let arr = Array.from(this.$slots.default)
-        let ele
-        for (let i = 0, len = arr.length; i < len; i ++) {
-          ele = arr[i].componentInstance
-          if (ele) {
-            ele.isDisabled = this.disabled
-          }
-        }
+      this.$forEachSlotChild((ele, root) => {
+        ele.isDisabled = root.disabled
       })
     }
   }
